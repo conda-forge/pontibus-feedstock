@@ -1,6 +1,6 @@
-{% set python_min = '3.10' %}
+{% set python_min = "3.10" %}
 {% set name = "pontibus" %}
-{% set version = "0.0.2" %}
+{% set version = "0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://github.com/OpenFreeEnergy/pontibus/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 4152afbe78cb04be19d4ec4555f39d1d8a1921fd3bfeb38cf1f9e0bee1ad68e4
+  sha256: f3a23c44af7b576a92b9fef94e87c6fe3bc8dfd7516ae61c22c09925412b2ec5
 
 build:
   noarch: python
-  script: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
+  script: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
