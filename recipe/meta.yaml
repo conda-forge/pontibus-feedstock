@@ -1,6 +1,6 @@
 {% set python_min = "3.11" %}
 {% set name = "pontibus" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/OpenFreeEnergy/pontibus/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: f69d3056bfb7e33ac09c8d060b396466296285ed0574967468eab675a0a94ed6
+  sha256: f28ed8ad63fb1d17ca687c29500c29c00650e089656285313ccf049ac6533db8
 
 build:
   noarch: python
@@ -22,12 +22,12 @@ requirements:
     - setuptools
     - setuptools-scm
   run:
-    - gufe >=1.5.0,<1.7
-    - openfe >=1.5.0,<1.7
+    - gufe >=1.7
+    - openfe >=1.7
     - numpy <2.3
-    - openmm !=8.1.0,>=8.0.0,<8.3 
+    - openmm !=8.1.0,>=8.0.0,<8.3.0
     - openmmtools >0.24
-    - openff-interchange >=0.4.8
+    - openff-interchange >=0.4.8,<0.5
     - openff-nagl-base >=0.3.3
     - pydantic >=2.0
     - python >={{ python_min }}
@@ -41,7 +41,7 @@ test:
     - pytest
     - python {{ python_min }}
   commands:
-    - python -c "import pontibus; assert(pontibus.__version__ == '0.2.0')"
+    - python -c "import pontibus; assert(pontibus.__version__ == '0.3.0')"
     - pytest -v --pyargs pontibus
 
 about:
