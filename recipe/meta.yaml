@@ -1,6 +1,6 @@
 {% set python_min = "3.11" %}
 {% set name = "pontibus" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/OpenFreeEnergy/pontibus/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 787d95f0086074d842440cad6e8da3c830ab434427a1837e379e42f2c49cbce6
+  sha256: db94d9a7d35ab4e2453c980e83c4223564d3eb652d909d34234a8070df9bc686
 
 build:
   noarch: python
